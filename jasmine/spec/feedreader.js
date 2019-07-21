@@ -31,11 +31,13 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+
         /* it('URL is defined, is not empty', function() {
             for (i = 0; i < allFeeds.length; i++) {
               expect(allFeeds[i].url).toBeDefined();
               expect(allFeeds[i].url.length).not.toBe(0);
             }
+
           }); */
 
           // concised code!
@@ -52,12 +54,20 @@ $(function() {
          */
     });
 
-    it('name is defined, is not empty', function() {
+   /* it('name is defined, is not empty', function() {
         for (i = 0; i < allFeeds.length; i++) {
           expect(allFeeds[i].name).toBeDefined();
           expect(allFeeds[i].name.length).not.toBe(0);
         }
-      });
+      }); */
+
+      // concised code
+      it('name is defined, is not empty', function() {
+        for(feed of allFeeds) {
+            expect(feed.name).toBeDefined();
+            expect(allFeeds.url).not.toBe('');
+        };
+    });
 
  });
 
