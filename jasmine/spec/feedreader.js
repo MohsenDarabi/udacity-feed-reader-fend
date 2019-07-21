@@ -52,7 +52,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-    });
+    
 
    /* it('name is defined, is not empty', function() {
         for (i = 0; i < allFeeds.length; i++) {
@@ -139,5 +139,13 @@ $(function() {
                   });
               });
           });
+                  // The test compare the content of two variables: oldFeeds and newFeeds.
+        // If the feed content has correctly changed after the new set was loaded
+        // then also the HTML content must change so the variables should be
+        // different
+        it('is correctly loaded within .feed container', function() {
+          expect(newFeeds).not.toEqual(oldFeeds);
+      });
+  });
   
 }());
