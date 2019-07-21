@@ -117,10 +117,27 @@ $(function() {
           });
       });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        // Test suite to check page refresh when new feed set is selected
+        describe('New Feed Selection', function() {
+          let oldFeeds;
+          let newFeeds;
+  
+          // As before we should start the test when the contents are loaded
+          beforeEach(function(done) {
+              // Load the first set of feeds
+              loadFeed(0, function() {
+  
+                  // Store the HTML content into oldFeeds variable
+                  oldFeeds = document.getElementsByClassName('feed')[0].innerHTML;
+  
+                  // Load the second set of feeds
+                  loadFeed(1, function() {
+  
+                      // Store the HTML of the new feeds into newFeeds variable
+                      newFeeds = document.getElementsByClassName('feed')[0].innerHTML;
+                      done();
+                  });
+              });
+          });
+  
 }());
