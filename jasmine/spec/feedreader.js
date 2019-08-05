@@ -83,7 +83,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('is hidden by default', function() {
-          expect(body.classList.value).toBe('menu-hidden');
+          expect(body.hasClass('menu-hidden')).toBeTruthy();
       });
          /* a test that ensures the menu changes
           * visibility when the menu icon is clicked.
